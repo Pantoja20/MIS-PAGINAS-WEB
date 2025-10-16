@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Market Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Bea<span>Market</span></div>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Buscar productos...">
+                </div>
+                <div class="cart-icon" id="cart-icon">
+                    🛒 <span class="cart-count" id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegación por categorías -->
+    <nav>
+        <div class="container">
+            <ul class="categories">
+                <li class="active" data-category="all">Todos</li>
+                <li data-category="bebidas">Bebidas</li>
+                <li data-category="snacks">Snacks y Galletas</li>
+                <li data-category="higiene">Higiene y Limpieza</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="container">
+        <div id="products-container" class="products-grid">
+            <!-- Los productos se cargarán aquí dinámicamente -->
+        </div>
+    </main>
+
+    <!-- Modal del carrito -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Tu Carrito de Compras</h2>
+                <button class="close-cart" id="close-cart">×</button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Los items del carrito se cargarán aquí -->
+            </div>
+            <div class="cart-total">
+                Total: S/ <span id="cart-total">0.00</span>
+            </div>
+            <div class="payment-options">
+                <button class="payment-btn yape-btn" id="yape-btn">Pagar con Yape</button>
+                <button class="payment-btn cash-btn" id="cash-btn">Pagar en Efectivo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de pago con Yape -->
+    <div id="yape-modal" class="payment-modal">
+        <div class="payment-content">
+            <h2>Pago con Yape</h2>
+            <div class="qr-code">
+                <img src="images/QR-Yape.jpeg" alt="Código QR para Yape">
+            </div>
+            <p>Escanea el código QR para completar tu pago</p>
+            <div class="payment-actions">
+                <button class="btn-secondary" id="cancel-yape">Cancelar</button>
+                <button class="btn-primary" id="confirm-yape">Confirmar Pago</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de pago en efectivo -->
+   <!-- Modal de pago en efectivo -->
+<div id="cash-modal" class="payment-modal">
+    <div class="payment-content">
+        <h2>Pago en Efectivo</h2>
+        <div class="customer-info">
+            <label for="customer-name">Nombre del cliente:</label>
+            <input type="text" id="customer-name" placeholder="Ingresa tu nombre">
+        </div>
+        <div class="boleta" id="boleta-content">
+            <!-- Contenido de la boleta -->
+        </div>
+        <div class="payment-actions">
+            <button class="btn-secondary" id="print-boleta">Imprimir Boleta</button>
+            <button class="btn-primary" id="confirm-cash">Confirmar Pago</button> <!-- NUEVO BOTÓN -->
+            <button class="btn-secondary" id="continue-shopping">Seguir Comprando</button>
+        </div>
+    </div>
+</div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
